@@ -1,31 +1,26 @@
-module.exports = {
-    purge: {
-        content : [
-            './src/**/*.ts',
-            './src/**/*.tsx',
-        ],
-        enabled: true,
-        mode : 'all',
-    },
+let configuration = {
     theme: {
-        extend: {
-            colors: {
-                "bg-primary": "#292851",
-            },
-            width: {
-                '100px': "100px",
-                "150px": "150px",
-                "240px": "240px",
-                "200px" : "200px"
-            },
-            height: {
-                "240px": "240px",
-                "150px": "150px",
-                "200px" : "200px",
-            }
-        }
+        backgroundColor: (theme) => ({
+            ...theme('colors'),
+            "primary": "#292851",
+            "primary-light": "#292851AA",
+            "divider": "#2B2B2B"
+        }),
     },
     plugins: [
         require('@tailwindcss/custom-forms')
     ],
 };
+
+if (process.env.NODE_ENV === 'production') {
+    configuration.purge = {
+        content: [
+            './src/**/*.ts',
+            './src/**/*.tsx',
+        ],
+        enabled: true,
+        mode: 'all',
+    };
+}
+
+module.exports = configuration;

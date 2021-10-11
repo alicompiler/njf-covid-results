@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { HomePage } from './Home/HomePage';
+import {AppWrapper} from "./Root/AppWrapper";
 
 ReactDOM.render(
   <React.StrictMode>
-    <h1>COVID-19 Results DB</h1>
+    <AppWrapper />
   </React.StrictMode>,
   document.getElementById('root')
 );
