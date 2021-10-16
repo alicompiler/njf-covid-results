@@ -9,6 +9,7 @@ import AdvanceSearchModal from "./Components/AdvanceSearchModal";
 import {DispatchableProps} from "../Core/Dispatchable";
 import {connect} from "react-redux";
 import {SearchActions} from "./Data/SearchActions";
+import {SearchResult} from "./Components/SearchResult";
 
 interface Props extends DispatchableProps {
 
@@ -35,6 +36,107 @@ class HomePage extends React.Component<Props> {
             </div>
             <Divider/>
             <ExcelFileUploadBox/>
+            <SearchResult items={[
+                {
+                    id: '1',
+                    name: 'Ali Faris',
+                    phone: '07808130427',
+                    result: 'Positive',
+                    source: 'Al-Hakeem',
+                    date: '2021-01-01',
+                    status: 'Suspected',
+                    smsStatus: 'Failed',
+                    notes: 'some notes'
+                },
+                {
+                    id: '1',
+                    name: 'Ali Faris',
+                    phone: '07808130427',
+                    result: 'Positive',
+                    source: 'Al-Hakeem',
+                    date: '2021-01-01',
+                    status: 'Suspected',
+                    smsStatus: 'Failed',
+                    notes: 'some notes'
+                },
+                {
+                    id: '1',
+                    name: 'Ali Faris',
+                    phone: '07808130427',
+                    result: 'Positive',
+                    source: 'Al-Hakeem',
+                    date: '2021-01-01',
+                    status: 'Suspected',
+                    smsStatus: 'Failed',
+                    notes: '0 '
+                },
+                {
+                    id: '1',
+                    name: 'Ali Faris',
+                    phone: '07808130427',
+                    result: 'Positive',
+                    source: 'Al-Hakeem',
+                    date: '2021-01-01',
+                    status: 'Suspected',
+                    smsStatus: 'Failed',
+                    notes: '   '
+                },
+                {
+                    id: '1',
+                    name: 'Ali Faris',
+                    phone: '07808130427',
+                    result: 'Positive',
+                    source: 'Al-Hakeem',
+                    date: '2021-01-01',
+                    status: 'Suspected',
+                    smsStatus: 'Failed',
+                    notes: 'some notes'
+                },
+                {
+                    id: '1',
+                    name: 'Ali Faris',
+                    phone: '07808130427',
+                    result: 'Positive',
+                    source: 'Al-Hakeem',
+                    date: '2021-01-01',
+                    status: 'Suspected',
+                    smsStatus: 'Failed',
+                    notes: 'some notes'
+                },
+                {
+                    id: '1',
+                    name: 'Ali Faris',
+                    phone: '07808130427',
+                    result: 'Positive',
+                    source: 'Al-Hakeem',
+                    date: '2021-01-01',
+                    status: 'Suspected',
+                    smsStatus: 'Failed',
+                    notes: 'some notes'
+                },
+                {
+                    id: '1',
+                    name: 'Ali Faris',
+                    phone: '07808130427',
+                    result: 'Positive',
+                    source: 'Al-Hakeem',
+                    date: '2021-01-01',
+                    status: 'Suspected',
+                    smsStatus: 'Failed',
+                    notes: 'some notes some notes some notes some notes some notes some notes some notes some notes some notes'
+                },
+                {
+                    id: '1',
+                    name: 'Ali Faris',
+                    phone: '07808130427',
+                    result: 'Positive',
+                    source: 'Al-Hakeem',
+                    date: '2021-01-01',
+                    status: 'Suspected',
+                    smsStatus: 'Failed',
+                    notes: 'some notes'
+                },
+            ]}/>
             <AdvanceSearchModal/>
         </div>
     }

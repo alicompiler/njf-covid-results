@@ -25,10 +25,8 @@
 
 # TODO : 
 
- - Advance Search Modal
  - Search Result
- - Search Bar
- - Divider
- - Upload Box
  - Actions Menu
  - Delete Confirmation Dialog
+ - Create Modal
+ - Update Modal
