@@ -1,4 +1,4 @@
-import {ReduxAction} from "../../Root/Redux/ReduxAction";
+import {ReduxAction} from "../../../Root/Redux/ReduxAction";
 import {ImportActionType} from "./ImportDataActions";
 
 export interface UploadReducerState {

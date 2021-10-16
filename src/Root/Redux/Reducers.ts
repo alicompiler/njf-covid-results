@@ -1,6 +1,6 @@
-import {UploadReducer, UploadReducerState} from "../../Home/Data/UploadReducer";
+import {UploadReducer, UploadReducerState} from "../../Pages/Home/Data/UploadReducer";
 import {ReduxAction} from "./ReduxAction";
-import {SearchReducer, SearchReducerState} from "../../Home/Data/SearchReducer";
+import {SearchReducer, SearchReducerState} from "../../Pages/Home/Data/SearchReducer";
 
 export interface ReduxState {
     Upload: UploadReducerState;

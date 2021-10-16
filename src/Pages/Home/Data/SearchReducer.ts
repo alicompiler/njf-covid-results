@@ -1,4 +1,5 @@
 import {SearchAction, SearchActionType} from "./SearchAction";
+import {Patient} from "./Patient";
 
 export interface AdvanceSearchForm {
     name: string;
@@ -11,8 +12,12 @@ export interface AdvanceSearchForm {
 }
 
 export interface SearchReducerState {
+    query: string;
     advanceSearchForm: AdvanceSearchForm;
     isAdvanceSearchModalOpen: boolean;
+    searching: boolean;
+    searchResult?: Patient[];
+    searchError: any;
 }
 
 export const searchReducerInitialState: SearchReducerState = {
@@ -25,7 +30,10 @@ export const searchReducerInitialState: SearchReducerState = {
         source: '',
         status: ''
     },
-    isAdvanceSearchModalOpen: false
+    query: '',
+    isAdvanceSearchModalOpen: false,
+    searching: false,
+    searchError: null
 }
 
 export const SearchReducer = function (state: SearchReducerState = searchReducerInitialState, action: SearchAction): SearchReducerState {
@@ -39,6 +47,23 @@ export const SearchReducer = function (state: SearchReducerState = searchReducer
                 ...state,
                 advanceSearchForm: {...state.advanceSearchForm, [action.payload.key]: action.payload.value}
             }
+        case SearchActionType.SEARCH_STARTED:
+            return {
+                ...state,
+                searching: true, searchResult: undefined, searchError: null
+            };
+        case SearchActionType.SEARCH_FAILED:
+            return {
+                ...state,
+                searching: false, searchResult: undefined, searchError: action.payload
+            };
+        case SearchActionType.SEARCH_COMPLETED:
+            return {
+                ...state,
+                searching: false, searchError: null, searchResult: action.payload
+            };
+        case SearchActionType.SET_SEARCH_QUERY:
+            return {...state, query: action.payload};
     }
     return state;
 }

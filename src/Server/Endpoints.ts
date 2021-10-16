@@ -1,3 +1,4 @@
 export enum Endpoints {
-    ImportExcel = 'import-excel'
+    ImportExcel = 'api/patients/import-excel',
+    Search = 'api/patients',
 }

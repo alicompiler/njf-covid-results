@@ -1,11 +1,11 @@
 import React, {BaseSyntheticEvent} from "react";
 import {LabeledInput} from "./LabeledInput";
-import {Divider} from "../../Shared/Divider";
+import {Divider} from "../../../Shared/Divider";
 import {XIcon} from "@heroicons/react/solid"
 import {AdvanceSearchForm} from "../Data/SearchReducer";
-import {DispatchableProps} from "../../Core/Dispatchable";
+import {DispatchableProps} from "../../../Core/Dispatchable";
 import {connect} from "react-redux";
-import {ReduxState} from "../../Root/Redux/Reducers";
+import {ReduxState} from "../../../Root/Redux/Reducers";
 import {SearchActions} from "../Data/SearchActions";
 
 

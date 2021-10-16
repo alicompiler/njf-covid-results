@@ -1,4 +1,4 @@
-import {ReduxActionBase} from "../../Root/Redux/ReduxAction";
+import {ReduxActionBase} from "../../../Root/Redux/ReduxAction";
 
 export enum ImportActionType {
     UPDATE_PROGRESS = "UPDATE_PROGRESS",

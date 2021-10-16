@@ -25,8 +25,6 @@
 
 # TODO : 
 
- - Search Result
- - Actions Menu
  - Delete Confirmation Dialog
  - Create Modal
  - Update Modal

@@ -1,9 +1,9 @@
 import React from "react";
-import {FileUploadDraggableBox} from "../../Shared/FileUploadDraggableBox";
+import {FileUploadDraggableBox} from "../../../Shared/FileUploadDraggableBox";
 import {connect} from "react-redux";
-import {ReduxState} from "../../Root/Redux/Reducers";
+import {ReduxState} from "../../../Root/Redux/Reducers";
 import {UploadReducerState} from "../Data/UploadReducer";
-import {DispatchableProps} from "../../Core/Dispatchable";
+import {DispatchableProps} from "../../../Core/Dispatchable";
 import {FakeImportDataService, ImportDataService} from "../Service/ImportDataService";
 
 interface Props extends UploadReducerState, DispatchableProps {

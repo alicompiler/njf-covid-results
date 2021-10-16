@@ -1,6 +1,6 @@
 import {Component} from "react";
 import {Patient} from "../Data/Patient";
-import {HorizontalDivider} from "../../Shared/HorizontalDivider";
+import {HorizontalDivider} from "../../../Shared/HorizontalDivider";
 
 
 interface Props {

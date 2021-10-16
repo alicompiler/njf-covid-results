@@ -1,7 +1,7 @@
-import {DispatchableProps} from "../../Core/Dispatchable";
+import {DispatchableProps} from "../../../Core/Dispatchable";
 import {Axios} from "axios";
-import {DefaultUrlManager, UrlManager} from "../../Server/UrlManager";
-import {Endpoints} from "../../Server/Endpoints";
+import {DefaultUrlManager, UrlManager} from "../../../Server/UrlManager";
+import {Endpoints} from "../../../Server/Endpoints";
 import {FinishUploadAction, StartUploadAction, UpdateUploadProgressAction} from "../Data/ImportDataActions";
 
 
