@@ -5,8 +5,16 @@ import {AdjustmentsIcon} from "@heroicons/react/outline"
 import {PlusIcon} from "@heroicons/react/outline"
 import {HorizontalDivider} from "../Shared/HorizontalDivider";
 import ExcelFileUploadBox from "./Components/ImportExcelFileBox";
+import AdvanceSearchModal from "./Components/AdvanceSearchModal";
+import {DispatchableProps} from "../Core/Dispatchable";
+import {connect} from "react-redux";
+import {SearchActions} from "./Data/SearchActions";
 
-export class HomePage extends React.Component<any, any> {
+interface Props extends DispatchableProps {
+
+}
+
+class HomePage extends React.Component<Props> {
     render(): any {
         return <div>
             <div className="px-16 py-8 md:px-32 md:py-32">
@@ -14,7 +22,7 @@ export class HomePage extends React.Component<any, any> {
                     <SearchBox/>
                     <HorizontalDivider/>
                     <a href={"#"} className={'cursor-pointer p-2 border-2 border-gray-500 rounded'}
-                       onClick={() => undefined}>
+                       onClick={() => this.props.dispatch(SearchActions.openAdvanceSearchModal())}>
                         <AdjustmentsIcon className={'w-16 h-16'}/>
                     </a>
                     <HorizontalDivider/>
@@ -27,6 +35,9 @@ export class HomePage extends React.Component<any, any> {
             </div>
             <Divider/>
             <ExcelFileUploadBox/>
+            <AdvanceSearchModal/>
         </div>
     }
 }
+
+export default connect()(HomePage)

@@ -1,8 +1,10 @@
 import {UploadReducer, UploadReducerState} from "../../Home/Data/UploadReducer";
 import {ReduxAction} from "./ReduxAction";
+import {SearchReducer, SearchReducerState} from "../../Home/Data/SearchReducer";
 
 export interface ReduxState {
     Upload: UploadReducerState;
+    Search : SearchReducerState;
 }
 
 type ReducersObject = {
@@ -10,5 +12,6 @@ type ReducersObject = {
 };
 
 export const Reducers: ReducersObject = {
-    Upload: UploadReducer
+    Upload: UploadReducer,
+    Search : SearchReducer,
 };

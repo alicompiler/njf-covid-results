@@ -4,7 +4,7 @@ let configuration = {
             ...theme('colors'),
             "primary": "#292851",
             "primary-light": "#292851AA",
-            "divider": "#2B2B2B"
+            "divider": "#EEE"
         }),
     },
     plugins: [

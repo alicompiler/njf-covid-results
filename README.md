@@ -8,9 +8,8 @@
     * Search Bar
     * Divider
     * Upload Box
-    * Advance Search Model
+    * Advance Search Modal
     * Search Result
-    * Status View
     * Create Modal
     * Actions Menu
     * Edit Modal
@@ -20,4 +19,16 @@
    * Login Form
    * Error Login Message
 
+ 
 
+
+
+# TODO : 
+
+ - Advance Search Modal
+ - Search Result
+ - Search Bar
+ - Divider
+ - Upload Box
+ - Actions Menu
+ - Delete Confirmation Dialog

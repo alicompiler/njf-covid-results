@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HomePage } from './Home/HomePage';
 import {AppWrapper} from "./Root/AppWrapper";
 
 ReactDOM.render(
