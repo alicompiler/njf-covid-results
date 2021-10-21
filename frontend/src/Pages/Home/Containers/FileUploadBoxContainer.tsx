@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 import {ReduxState} from "../../../Root/Redux/Reducers";
 import {UploadReducerState} from "../Data/UploadReducer";
 import {DispatchableProps} from "../../../Core/Dispatchable";
-import {FakeImportDataService, ImportDataService} from "../Service/ImportDataService";
+import {DefaultImportDataService, FakeImportDataService, ImportDataService} from "../Service/ImportDataService";
 
 interface Props extends UploadReducerState, DispatchableProps {
 
@@ -16,7 +16,7 @@ class FileUploadBoxContainer extends React.Component<Props> {
 
     constructor(props: Props) {
         super(props);
-        this.importDataService = new FakeImportDataService(this.props);
+        this.importDataService = new DefaultImportDataService(this.props);
     }
 
     render() {
@@ -26,7 +26,8 @@ class FileUploadBoxContainer extends React.Component<Props> {
     }
 
     private onUpload = async (files: any[]) => {
-        if (files && files.length === 0) {
+        if (files && files.length > 0) {
+            console.log('uploading');
             await this.importDataService.import(files[0]);
         }
     }

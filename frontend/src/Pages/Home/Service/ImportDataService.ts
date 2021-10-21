@@ -1,5 +1,5 @@
 import {DispatchableProps} from "../../../Core/Dispatchable";
-import {Axios} from "axios";
+import Axios from "axios";
 import {DefaultUrlManager, UrlManager} from "../../../Server/UrlManager";
 import {Endpoints} from "../../../Server/Endpoints";
 import {FinishUploadAction, StartUploadAction, UpdateUploadProgressAction} from "../Data/ImportDataActions";
@@ -20,24 +20,30 @@ export class DefaultImportDataService implements ImportDataService {
     }
 
     public async import(excelFile: any, onUpload?: () => void, onFail?: () => void): Promise<any> {
-        const axiosClient = new Axios();
         const url = this.urlManager.getEndpoint(Endpoints.ImportExcel);
         const data = new FormData();
 
-        this.dispatchable.dispatch(new StartUploadAction());
+        data.append("excel" , excelFile);
+
+        console.log('start');
+        //this.dispatchable.dispatch(new StartUploadAction());
         try {
-            await axiosClient.post(url, data, {onUploadProgress: this.onUploadProgress});
+            console.log(url , data);
+            const response = await Axios.post(url, data, {onUploadProgress: this.onUploadProgress});
             onUpload?.();
+            console.log(response);
         } catch (e) {
+            console.log(e);
             onFail?.();
         }
-        this.dispatchable.dispatch(new FinishUploadAction());
+       // this.dispatchable.dispatch(new FinishUploadAction());
     }
 
     private onUploadProgress = (progressEvent: any) => {
         const {loaded, total} = progressEvent;
         const progress = Math.floor(loaded / total * 100);
-        this.dispatchable.dispatch(new UpdateUploadProgressAction(progress).toActionObject());
+        console.log(progress);
+        //this.dispatchable.dispatch(new UpdateUploadProgressAction(progress).toActionObject());
     }
 }
 

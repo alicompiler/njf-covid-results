@@ -6,6 +6,9 @@ export enum ImportActionType {
     FINISH_UPLOAD = "FINISH_UPLOAD"
 }
 
+
+
+
 export class StartUploadAction extends ReduxActionBase<ImportActionType, undefined> {
     constructor() {
         super(undefined, ImportActionType.START_UPLOAD);

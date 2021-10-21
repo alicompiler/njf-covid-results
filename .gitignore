@@ -351,7 +351,7 @@ __pycache__/
 # Tabs Studio
 *.tss
 
-# Telerik's JustMock configuration file
+# Telerik's JustMock Configuration file
 *.jmconfig
 
 # BizTalk build output

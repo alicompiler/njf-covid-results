@@ -7,9 +7,9 @@ TODO :
 	- [X] Backend Project Setup
 	- [X] Frontend Project Setup
 	- [X] Database Setup
-	- [ ] Localization
-	- [ ] Upload Excel Design
- 	- [ ] Upload Excel File
+	- [X] Localization
+	- [X] Upload Excel Design
+ 	- [X] Upload Excel File
 	- [ ] Store Uploaded Excel File
 	- [ ] Simple Search Design
 	- [ ] Simple Search Request

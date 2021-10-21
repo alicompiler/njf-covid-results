@@ -1,0 +1,11 @@
+{
+  "name": ["name", "الاسم"],
+  "age": ["age", "العمر"],
+  "address": ["address", "العنوان"],
+  "mobile": ["mobile", "الموبايل"],
+  "status": ["status", "الحالة"],
+  "result": ["result", "النتيجة"],
+  "source": ["source", "المصدر"],
+  "note": ["note", "notes", "الملاحظات"],
+  "smsStatus": ["sms", "sms status", "الرسالة"]
+}
