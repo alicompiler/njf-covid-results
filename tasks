@@ -1,0 +1,29 @@
+Covid Result App
+
+
+
+TODO :
+
+	- [ ] Backend Project Setup
+	- [ ] Frontend Project Setup
+	- [ ] Database Setup
+	- [ ] Upload Excel Design
+ 	- [ ] Upload Excel File
+	- [ ] Store Uploaded Excel File
+	- [ ] Simple Search Design
+	- [ ] Simple Search Request
+	- [ ] Simple Search Endpoint
+	- [ ] Advance Search Modal
+	- [ ] Advance Search Request
+	- [ ] Advance Search Endpoint
+	- [ ] Result Design
+	- [ ] Display Results
+	- [ ] Delete Confirmation Modal
+	- [ ] Delete Item Request
+	- [ ] Delete Endpoint
+	- [ ] Snackbar Setup
+	- [ ] Display Error,Success Messages
+	- [ ] Create/Edit Modal
+	- [ ] Create/Edit Request
+	- [ ] Create Endpoint
+	- [ ] Edit Endpoint
