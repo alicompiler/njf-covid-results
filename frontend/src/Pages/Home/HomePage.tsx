@@ -2,7 +2,7 @@ import React from "react";
 import {Divider} from "../../Shared/Divider";
 import {AdjustmentsIcon, PlusIcon} from "@heroicons/react/outline"
 import {HorizontalDivider} from "../../Shared/HorizontalDivider";
-import ExcelFileUploadBox from "./Components/ImportExcelFileBox";
+import ExcelFileUploadBox from "./Containers/FileUploadBoxContainer";
 import AdvanceSearchModal from "./Components/AdvanceSearchModal";
 import {DispatchableProps} from "../../Core/Dispatchable";
 import {connect} from "react-redux";

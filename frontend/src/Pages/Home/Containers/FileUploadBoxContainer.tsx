@@ -1,5 +1,5 @@
 import React from "react";
-import {FileUploadDraggableBox} from "../../../Shared/FileUploadDraggableBox";
+import {FileUploadBox} from "../Components/FileUploadBox";
 import {connect} from "react-redux";
 import {ReduxState} from "../../../Root/Redux/Reducers";
 import {UploadReducerState} from "../Data/UploadReducer";
@@ -10,7 +10,8 @@ interface Props extends UploadReducerState, DispatchableProps {
 
 }
 
-class ImportExcelFileBox extends React.Component<Props> {
+class FileUploadBoxContainer extends React.Component<Props> {
+
     private importDataService: ImportDataService;
 
     constructor(props: Props) {
@@ -19,9 +20,9 @@ class ImportExcelFileBox extends React.Component<Props> {
     }
 
     render() {
-        return <FileUploadDraggableBox uploading={this.props.uploading}
-                                       uploadProgress={this.props.uploadProgress ?? 0}
-                                       onUpload={this.onUpload}/>
+        return <FileUploadBox uploading={this.props.uploading}
+                              uploadProgress={this.props.uploadProgress ?? 0}
+                              onUpload={this.onUpload}/>
     }
 
     private onUpload = async (files: any[]) => {
@@ -34,4 +35,4 @@ class ImportExcelFileBox extends React.Component<Props> {
 
 export default connect((state: ReduxState): Omit<Props, keyof DispatchableProps> => {
     return {...state.Upload}
-})(ImportExcelFileBox)
+})(FileUploadBoxContainer);

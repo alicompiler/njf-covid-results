@@ -1,5 +1,6 @@
 import {useCallback} from "react";
 import {useDropzone} from "react-dropzone";
+import {useTranslation} from "react-i18next";
 
 
 interface Props {
@@ -8,12 +9,13 @@ interface Props {
     uploadProgress: number;
 }
 
-export function FileUploadDraggableBox(props: Props) {
+export function FileUploadBox(props: Props) {
 
     const onDrop = useCallback(acceptedFiles => {
         props.onUpload(acceptedFiles);
     }, [props])
-    const {getRootProps, getInputProps} = useDropzone({onDrop})
+    const {getRootProps, getInputProps} = useDropzone({onDrop});
+    const {t} = useTranslation();
 
     return (
         <div className={'bg-gray-200 py-32 px-8 w-full flex items-center justify-center'} {...getRootProps()}>
@@ -33,7 +35,7 @@ export function FileUploadDraggableBox(props: Props) {
                         <p className={'text-2xl py-2'}>{props.uploadProgress}%</p>
                     </div>
                     :
-                    <p>Import Data (drop excel file here or click here)</p>
+                    <p>{t('import_box_message')}</p>
             }
         </div>
     )
