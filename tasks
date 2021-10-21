@@ -4,9 +4,9 @@ Covid Result App
 
 TODO :
 
-	- [ ] Backend Project Setup
-	- [ ] Frontend Project Setup
-	- [ ] Database Setup
+	- [X] Backend Project Setup
+	- [X] Frontend Project Setup
+	- [X] Database Setup
 	- [ ] Upload Excel Design
  	- [ ] Upload Excel File
 	- [ ] Store Uploaded Excel File
