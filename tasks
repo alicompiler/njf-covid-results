@@ -10,6 +10,7 @@ TODO :
 	- [X] Localization
 	- [X] Upload Excel Design
  	- [X] Upload Excel File
+ 	- [ ] Database Setup
 	- [ ] Store Uploaded Excel File
 	- [ ] Simple Search Design
 	- [ ] Simple Search Request
@@ -19,12 +20,12 @@ TODO :
 	- [ ] Advance Search Endpoint
 	- [ ] Result Design
 	- [ ] Display Results
-	- [ ] Delete Confirmation Modal
-	- [ ] Delete Item Request
-	- [ ] Delete Endpoint
-	- [ ] Snackbar Setup
-	- [ ] Display Error,Success Messages
-	- [ ] Create/Edit Modal
-	- [ ] Create/Edit Request
-	- [ ] Create Endpoint
-	- [ ] Edit Endpoint
+	* [ ] Delete Confirmation Modal
+	* [ ] Delete Item Request
+	* [ ] Delete Endpoint
+	* [ ] Snackbar Setup
+	* [ ] Display Error,Success Messages
+	* [ ] Create/Edit Modal
+	* [ ] Create/Edit Request
+	* [ ] Create Endpoint
+	* [ ] Edit Endpoint
