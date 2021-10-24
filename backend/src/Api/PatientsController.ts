@@ -2,10 +2,11 @@ import {Controller, Post, UploadedFile, UseInterceptors} from "@nestjs/common";
 import {ExcelImportService} from "../Services/ImportService";
 import {FileInterceptor} from "@nestjs/platform-express";
 import {diskStorage} from "multer";
+import {PatientService} from "../Services/PatientService";
 
 @Controller()
 export class PatientsController {
-    constructor(private readonly importService: ExcelImportService) {
+    constructor(private readonly importService: ExcelImportService, private readonly patientService: PatientService) {
     }
 
 
@@ -15,9 +16,9 @@ export class PatientsController {
             destination: './temp/'
         })
     }))
-    uploadFile(@UploadedFile() excel: Express.Multer.File) {
+    async uploadFile(@UploadedFile() excel: Express.Multer.File) {
         const patients = this.importService.import(excel);
-        console.log(patients);
+        await this.patientService.import(patients);
         return patients;
     }
 }

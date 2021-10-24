@@ -8,8 +8,7 @@ const xlsx = require('xlsx');
 export class ExcelImportService {
     import(input: Express.Multer.File): Patient[] {
         const workbook = xlsx.readFile(input.path);
-        const sheet_name_list = workbook.SheetNames;
-        const importedPatientsData = xlsx.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
+        const importedPatientsData = xlsx.utils.sheet_to_json(workbook.Sheets[workbook.SheetNames[0]]);
         return this.mapRowsToPatients(importedPatientsData);
     }
 

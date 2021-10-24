@@ -10,8 +10,8 @@ TODO :
 	- [X] Localization
 	- [X] Upload Excel Design
  	- [X] Upload Excel File
- 	- [ ] Database Setup
-	- [ ] Store Uploaded Excel File
+ 	- [X] Database Setup
+	- [X] Store Uploaded Excel File
 	- [ ] Simple Search Design
 	- [ ] Simple Search Request
 	- [ ] Simple Search Endpoint
