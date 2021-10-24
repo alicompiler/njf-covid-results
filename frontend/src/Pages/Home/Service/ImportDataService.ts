@@ -6,7 +6,7 @@ import {FinishUploadAction, StartUploadAction, UpdateUploadProgressAction} from 
 
 
 export interface ImportDataService {
-    import(data: any, onUpload?: () => void, onFail?: () => void): Promise<any>;
+    import(data: any , date :string, onUpload?: () => void, onFail?: () => void): Promise<any>;
 }
 
 export class DefaultImportDataService implements ImportDataService {
@@ -19,31 +19,17 @@ export class DefaultImportDataService implements ImportDataService {
         this.urlManager = new DefaultUrlManager();
     }
 
-    public async import(excelFile: any, onUpload?: () => void, onFail?: () => void): Promise<any> {
+    public async import(excelFile: any , date : string, onUpload?: () => void, onFail?: () => void): Promise<any> {
         const url = this.urlManager.getEndpoint(Endpoints.ImportExcel);
         const data = new FormData();
-
         data.append("excel" , excelFile);
-
-        console.log('start');
-        //this.dispatchable.dispatch(new StartUploadAction());
+        data.append("date" , date);
         try {
-            console.log(url , data);
-            const response = await Axios.post(url, data, {onUploadProgress: this.onUploadProgress});
+            await Axios.post(url, data);
             onUpload?.();
-            console.log(response);
         } catch (e) {
-            console.log(e);
             onFail?.();
         }
-       // this.dispatchable.dispatch(new FinishUploadAction());
-    }
-
-    private onUploadProgress = (progressEvent: any) => {
-        const {loaded, total} = progressEvent;
-        const progress = Math.floor(loaded / total * 100);
-        console.log(progress);
-        //this.dispatchable.dispatch(new UpdateUploadProgressAction(progress).toActionObject());
     }
 }
 
@@ -55,7 +41,7 @@ export class FakeImportDataService implements ImportDataService {
         this.dispatchable = dispatchable;
     }
 
-    import(data: any, onUpload?: () => void, onFail?: () => void): Promise<void> {
+    import(data: any, date : string, onUpload?: () => void, onFail?: () => void): Promise<void> {
         return new Promise(resolve => {
             this.dispatchable.dispatch(new StartUploadAction().toActionObject());
             let progress = 0;

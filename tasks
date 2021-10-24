@@ -12,6 +12,7 @@ TODO :
  	- [X] Upload Excel File
  	- [X] Database Setup
 	- [X] Store Uploaded Excel File
+	- [X] Date With Import
 	- [ ] Simple Search Design
 	- [ ] Simple Search Request
 	- [ ] Simple Search Endpoint

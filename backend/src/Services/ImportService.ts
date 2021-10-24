@@ -6,13 +6,13 @@ const xlsx = require('xlsx');
 
 @Injectable()
 export class ExcelImportService {
-    import(input: Express.Multer.File): Patient[] {
+    import(input: Express.Multer.File , date : string): Patient[] {
         const workbook = xlsx.readFile(input.path);
         const importedPatientsData = xlsx.utils.sheet_to_json(workbook.Sheets[workbook.SheetNames[0]]);
-        return this.mapRowsToPatients(importedPatientsData);
+        return this.mapRowsToPatients(importedPatientsData , date);
     }
 
-    private mapRowsToPatients(data: any[]): Patient[] {
+    private mapRowsToPatients(data: any[] , date : string): Patient[] {
         if (data.length === 0) {
             return [];
         }
@@ -26,7 +26,7 @@ export class ExcelImportService {
             source: row[columns['source']],
             smsStatus: row[columns['smsStatus']],
             status: row[columns['status']],
-            date: undefined,
+            date: date,
             result: row[columns['result']],
             notes: row[columns['notes']],
         }));

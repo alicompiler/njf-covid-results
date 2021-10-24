@@ -7,6 +7,7 @@ interface Props {
     onUpload: (file: any[]) => void;
     uploading: boolean;
     uploadProgress: number;
+    file?: any;
 }
 
 export function FileUploadBox(props: Props) {
@@ -35,7 +36,12 @@ export function FileUploadBox(props: Props) {
                         <p className={'text-2xl py-2'}>{props.uploadProgress}%</p>
                     </div>
                     :
-                    <p>{t('import_box_message')}</p>
+                    <div className={'flex flex-col items-center'}>
+                        {
+                            props.file && <h1 className={'text-2xl my-4'}>File Selected</h1>
+                        }
+                        <p>{t('import_box_message')}</p>
+                    </div>
             }
         </div>
     )
