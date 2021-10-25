@@ -12,6 +12,7 @@ import {ExcelImportService} from "./Services/ImportService";
             type: 'sqlite',
             database: path.resolve(__dirname, "result.db"),
             entities: [PatientEntity],
+            logging : true
         }),
         PatientModules,
     ],

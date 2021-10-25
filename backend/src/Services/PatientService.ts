@@ -2,7 +2,7 @@ import {Injectable} from "@nestjs/common";
 import {PatientEntity} from "../Entities/PatientEntity";
 import {Patient} from "../Models/Patient";
 import {InjectRepository} from "@nestjs/typeorm";
-import {Repository} from "typeorm";
+import {ILike, Repository} from "typeorm";
 
 @Injectable()
 export class PatientService {
@@ -15,6 +15,13 @@ export class PatientService {
             .insert()
             .into(PatientEntity)
             .values(patients)
+            .execute();
+    }
+
+    simpleSearch(query: string): Promise<any> {
+        return this.repository.createQueryBuilder("patients")
+            .select("*")
+            .where("name LIKE :name OR phone LIKE :phone", {name: `%${query}%`, phone: `%${query}%`})
             .execute();
     }
 }

@@ -2,7 +2,7 @@ import {AdvanceSearchForm} from "../Data/SearchReducer";
 import {Patient} from "../Data/Patient";
 import {DefaultUrlManager, UrlManager} from "../../../Server/UrlManager";
 import {Endpoints} from "../../../Server/Endpoints";
-import {Axios} from "axios";
+import Axios from "axios";
 
 export interface PatientService {
     getPatients(query?: string): Promise<Patient[]>;
@@ -13,7 +13,7 @@ export interface PatientService {
 
 export class DefaultPatientService implements PatientService {
 
-    private urlManager: UrlManager;
+    private readonly urlManager: UrlManager;
 
 
     constructor() {
@@ -29,9 +29,8 @@ export class DefaultPatientService implements PatientService {
     }
 
     private async callSearchEndpoint(params: object): Promise<Patient[]> {
-        const url = this.urlManager.getEndpoint(Endpoints.Search);
-        const client = new Axios();
-        const response = await client.get(url, {
+        const url = this.urlManager.getEndpoint(Endpoints.search);
+        const response = await Axios.get(url, {
             params: params,
         });
         if (response.status >= 300) {

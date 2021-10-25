@@ -1,6 +1,6 @@
 import React from "react";
 import {Divider} from "../../Shared/Divider";
-import {AdjustmentsIcon, PlusIcon} from "@heroicons/react/outline"
+import {AdjustmentsIcon} from "@heroicons/react/outline"
 import {HorizontalDivider} from "../../Shared/HorizontalDivider";
 import ExcelFileUploadBox from "./Containers/FileUploadBoxContainer";
 import AdvanceSearchModal from "./Components/AdvanceSearchModal";
@@ -30,11 +30,6 @@ class HomePage extends React.Component<Props> {
                         <AdjustmentsIcon className={'w-16 h-16'}/>
                     </a>
                     <HorizontalDivider/>
-                    {/*TODO : MOVE TO SHARED COMPONENTS*/}
-                    <a href={"#"} className={'cursor-pointer p-2 border-2 border-gray-500 rounded'}
-                       onClick={() => undefined}>
-                        <PlusIcon className={'w-16 h-16'}/>
-                    </a>
                 </div>
             </div>
             <Divider/>

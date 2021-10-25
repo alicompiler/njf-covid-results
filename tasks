@@ -13,7 +13,7 @@ TODO :
  	- [X] Database Setup
 	- [X] Store Uploaded Excel File
 	- [X] Date With Import
-	- [ ] Simple Search Design
+	- [X] Simple Search Design
 	- [ ] Simple Search Request
 	- [ ] Simple Search Endpoint
 	- [ ] Advance Search Modal

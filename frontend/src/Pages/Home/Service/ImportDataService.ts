@@ -20,7 +20,7 @@ export class DefaultImportDataService implements ImportDataService {
     }
 
     public async import(excelFile: any , date : string, onUpload?: () => void, onFail?: () => void): Promise<any> {
-        const url = this.urlManager.getEndpoint(Endpoints.ImportExcel);
+        const url = this.urlManager.getEndpoint(Endpoints.importExcel);
         const data = new FormData();
         data.append("excel" , excelFile);
         data.append("date" , date);

@@ -1,5 +1,6 @@
 import React, {useRef, useState} from 'react';
 import {SearchIcon} from "@heroicons/react/solid";
+import {useTranslation} from "react-i18next";
 
 
 interface Props {
@@ -11,6 +12,7 @@ interface Props {
 
 export function SearchBox(props: Props) {
     const inputRef = useRef<HTMLInputElement>(null);
+    const {t} = useTranslation();
     const [value, setValue] = useState('');
     return <div className={'p-4 border-2 border-gray-500 w-full rounded flex items-center cursor-text'}
                 onClick={() => inputRef.current?.focus()}>
@@ -26,6 +28,6 @@ export function SearchBox(props: Props) {
                    props.onChange(value);
                }}
                className={'p-0 text-4xl w-full text-gray-700 border-0 outline-none'}
-               placeholder={'search by name or phone ...'}/>
+               placeholder={t('search_by_name_or_phone')}/>
     </div>
 }

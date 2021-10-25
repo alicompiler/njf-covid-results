@@ -1,6 +1,6 @@
 import {SearchAction, SearchActionType} from "./SearchAction";
 import {AdvanceSearchForm} from "./SearchReducer";
-import {DefaultPatientService, FakePatientService, PatientService} from "../Service/PatientService";
+import {DefaultPatientService, PatientService} from "../Service/PatientService";
 import {ReduxState} from "../../../Root/Redux/Reducers";
 import {Patient} from "./Patient";
 
@@ -35,18 +35,18 @@ export class SearchActions {
     }
 
     public static simpleSearch(): any {
-        return SearchActions.getPatients((service, store) => service.advanceSearch(store.Search.advanceSearchForm));
+        return SearchActions.getPatients((service, store) => service.getPatients(store.Search.query));
     }
 
     public static advanceSearch(): any {
-        return SearchActions.getPatients((service, store) => service.getPatients(store.Search.query));
+        return SearchActions.getPatients((service, store) => service.advanceSearch(store.Search.advanceSearchForm));
     }
 
     private static getPatients(buildPatientPromise: (patientService: PatientService, store: ReduxState) => Promise<Patient[]>): any {
         return function (dispatch: (action: SearchAction) => void, getStore: () => ReduxState) {
-            const patientService = new FakePatientService();
-            dispatch(SearchActions.searchStarted())
-
+            const patientService = new DefaultPatientService();
+            console.log(patientService , getStore());
+            dispatch(SearchActions.searchStarted());
             buildPatientPromise(patientService, getStore())
                 .then(patients => dispatch(SearchActions.searchCompleted(patients)))
                 .catch(e => dispatch(SearchActions.searchFailed(e)))
