@@ -1,6 +1,6 @@
 import React from "react";
 import {Divider} from "../../Shared/Divider";
-import ExcelFileUploadBox from "./Components/FileUploadBoxContainer";
+import ExcelFileUploadBox from "./Components/UploadBox/FileUploadBoxContainer";
 import {AdvanceSearchModal} from "./Components/AdvanceSearchModal/AdvanceSearchModal";
 import {DispatchableProps} from "../../Core/Dispatchable";
 import {connect} from "react-redux";

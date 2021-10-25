@@ -1,12 +1,12 @@
 import React from "react";
 import {FileUploadBox} from "./FileUploadBox";
 import {connect} from "react-redux";
-import {ReduxState} from "../../../Root/Redux/Reducers";
-import {UploadReducerState} from "../Data/UploadReducer";
-import {DispatchableProps} from "../../../Core/Dispatchable";
-import {DefaultImportDataService, ImportDataService} from "../Service/ImportDataService";
+import {ReduxState} from "../../../../Root/Redux/Reducers";
+import {UploadReducerState} from "../../Data/UploadReducer";
+import {DispatchableProps} from "../../../../Core/Dispatchable";
+import {DefaultImportDataService, ImportDataService} from "../../Service/ImportDataService";
 import {withTranslation, WithTranslationProps} from "react-i18next";
-import {ImportActions} from "../Data/ImportDataActions";
+import {ImportActions} from "../../Data/ImportDataActions";
 
 interface Props extends UploadReducerState, DispatchableProps, WithTranslationProps {
 
