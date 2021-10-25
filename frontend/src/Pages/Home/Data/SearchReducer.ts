@@ -23,7 +23,7 @@ export interface SearchReducerState {
 
 export const searchReducerInitialState: SearchReducerState = {
     advanceSearchForm: {
-        advanceSearch:true,
+        advanceSearch: true,
         name: '',
         phone: '',
         fromDate: '',
@@ -66,6 +66,9 @@ export const SearchReducer = function (state: SearchReducerState = searchReducer
             };
         case SearchActionType.SET_SEARCH_QUERY:
             return {...state, query: action.payload};
+
+        case SearchActionType.CLEAR_RESULT:
+            return {...state, searchResult: undefined};
     }
     return state;
 }

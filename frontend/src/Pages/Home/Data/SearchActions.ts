@@ -79,5 +79,12 @@ export class SearchActions {
             payload: query
         };
     }
+
+    static clearResult()  : SearchAction{
+        return {
+            type: SearchActionType.CLEAR_RESULT,
+            payload : undefined
+        }
+    }
 }
 

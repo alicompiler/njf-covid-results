@@ -22,6 +22,7 @@ Tasks :
 	- [X] Result Design
 	- [X] Display Results
 	- [ ]
+	- [ ] Limit DB Result BY Configured Number
 	- [ ] Cancel Result
 	- [ ] Prepare For Deployment
 	* [ ] Delete Confirmation Modal

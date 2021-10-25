@@ -8,6 +8,7 @@ export enum SearchActionType {
     CLOSE_ADVANCE_SEARCH_MODAL = "SearchActionType@CLOSE_ADVANCE_SEARCH_MODAL",
     FILL_ADVANCE_SEARCH_FORM = "SearchActionType@FILL_ADVANCE_SEARCH_FORM",
     SET_SEARCH_QUERY = "SearchActionType@SET_SEARCH_QUERY",
+    CLEAR_RESULT = "SearchActionType@CLEAR_RESULT",
 }
 
 export interface SearchAction<TPayload = any> extends ReduxAction<SearchActionType, TPayload> {
