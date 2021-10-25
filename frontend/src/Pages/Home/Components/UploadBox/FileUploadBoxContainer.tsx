@@ -4,9 +4,9 @@ import {connect} from "react-redux";
 import {ReduxState} from "../../../../Root/Redux/Reducers";
 import {UploadReducerState} from "../../Data/UploadReducer";
 import {DispatchableProps} from "../../../../Core/Dispatchable";
-import {DefaultImportDataService, ImportDataService} from "../../Service/ImportDataService";
+import {DefaultImportService, ImportService} from "../../Service/ImportService";
 import {withTranslation, WithTranslationProps} from "react-i18next";
-import {ImportActions} from "../../Data/ImportDataActions";
+import {ImportActions} from "../../Data/ImportActions";
 
 interface Props extends UploadReducerState, DispatchableProps, WithTranslationProps {
 
@@ -14,12 +14,12 @@ interface Props extends UploadReducerState, DispatchableProps, WithTranslationPr
 
 class FileUploadBoxContainer extends React.Component<Props> {
 
-    private importDataService: ImportDataService;
+    private importDataService: ImportService;
     private dateInputRef : HTMLInputElement | null = null;
 
     constructor(props: Props) {
         super(props);
-        this.importDataService = new DefaultImportDataService(this.props);
+        this.importDataService = new DefaultImportService(this.props);
     }
 
     componentDidMount() {

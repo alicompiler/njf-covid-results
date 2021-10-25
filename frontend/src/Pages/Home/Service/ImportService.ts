@@ -2,14 +2,14 @@ import {DispatchableProps} from "../../../Core/Dispatchable";
 import Axios from "axios";
 import {DefaultUrlManager, UrlManager} from "../../../Server/UrlManager";
 import {Endpoints} from "../../../Server/Endpoints";
-import {FinishUploadAction, StartUploadAction, UpdateUploadProgressAction} from "../Data/ImportDataActions";
+import {ImportActions} from "../Data/ImportActions";
 
 
-export interface ImportDataService {
+export interface ImportService {
     import(data: any , date :string, onUpload?: () => void, onFail?: () => void): Promise<any>;
 }
 
-export class DefaultImportDataService implements ImportDataService {
+export class DefaultImportService implements ImportService {
 
     private readonly dispatchable: DispatchableProps;
     private readonly urlManager: UrlManager;
@@ -33,7 +33,7 @@ export class DefaultImportDataService implements ImportDataService {
     }
 }
 
-export class FakeImportDataService implements ImportDataService {
+export class FakeImportDataService implements ImportService {
 
     private readonly dispatchable: DispatchableProps;
 
@@ -43,17 +43,17 @@ export class FakeImportDataService implements ImportDataService {
 
     import(data: any, date : string, onUpload?: () => void, onFail?: () => void): Promise<void> {
         return new Promise(resolve => {
-            this.dispatchable.dispatch(new StartUploadAction().toActionObject());
+            this.dispatchable.dispatch(ImportActions.startUpload());
             let progress = 0;
             let intervalId = setInterval(() => {
                 if (progress >= 100) {
-                    this.dispatchable.dispatch(new FinishUploadAction().toActionObject());
+                    this.dispatchable.dispatch(ImportActions.finishUpload());
                     clearInterval(intervalId);
                     resolve();
                     return;
                 }
                 progress += 5;
-                this.dispatchable.dispatch(new UpdateUploadProgressAction(progress).toActionObject());
+                this.dispatchable.dispatch(ImportActions.updateUploadProgress(progress));
             }, 500);
         });
     }

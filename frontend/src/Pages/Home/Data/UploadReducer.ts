@@ -1,5 +1,5 @@
 import {ReduxAction} from "../../../Root/Redux/ReduxAction";
-import {ImportActionType} from "./ImportDataActions";
+import {ImportActionType} from "./ImportActions";
 
 export interface UploadReducerState {
     uploading: boolean;

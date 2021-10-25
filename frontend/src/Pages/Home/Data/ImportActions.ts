@@ -1,4 +1,4 @@
-import {ReduxAction, ReduxActionBase} from "../../../Root/Redux/ReduxAction";
+import {ReduxAction} from "../../../Root/Redux/ReduxAction";
 
 export enum ImportActionType {
     UPDATE_PROGRESS = "UPDATE_PROGRESS",
@@ -31,24 +31,26 @@ export class ImportActions {
             payload: undefined
         };
     }
-}
 
-
-export class StartUploadAction extends ReduxActionBase<ImportActionType, undefined> {
-    constructor() {
-        super(undefined, ImportActionType.START_UPLOAD);
+    public static startUpload(): ReduxAction<ImportActionType> {
+        return {
+            type: ImportActionType.START_UPLOAD,
+            payload: undefined
+        }
     }
-}
 
-export class FinishUploadAction extends ReduxActionBase<ImportActionType, undefined> {
-    constructor() {
-        super(undefined, ImportActionType.FINISH_UPLOAD);
+    public static finishUpload(): ReduxAction<ImportActionType> {
+        return {
+            type: ImportActionType.FINISH_UPLOAD,
+            payload: undefined
+        }
     }
-}
 
 
-export class UpdateUploadProgressAction extends ReduxActionBase<ImportActionType, number> {
-    constructor(progress: number) {
-        super(progress, ImportActionType.UPDATE_PROGRESS);
+    public static updateUploadProgress(progress:number): ReduxAction<ImportActionType> {
+        return {
+            type: ImportActionType.UPDATE_PROGRESS,
+            payload: progress
+        }
     }
 }
