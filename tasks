@@ -2,7 +2,7 @@ Covid Result App
 
 
 
-TODO :
+Tasks :
 
 	- [X] Backend Project Setup
 	- [X] Frontend Project Setup
@@ -16,11 +16,14 @@ TODO :
 	- [X] Simple Search Design
 	- [X] Simple Search Request
 	- [X] Simple Search Endpoint
-	- [ ] Advance Search Modal
-	- [ ] Advance Search Request
-	- [ ] Advance Search Endpoint
+	- [X] Advance Search Modal
+	- [X] Advance Search Request
+	- [X] Advance Search Endpoint
 	- [X] Result Design
 	- [X] Display Results
+	- [ ]
+	- [ ] Cancel Result
+	- [ ] Prepare For Deployment
 	* [ ] Delete Confirmation Modal
 	* [ ] Delete Item Request
 	* [ ] Delete Endpoint

@@ -1,5 +1,5 @@
 import React from "react";
-import {FileUploadBox} from "../Components/FileUploadBox";
+import {FileUploadBox} from "./FileUploadBox";
 import {connect} from "react-redux";
 import {ReduxState} from "../../../Root/Redux/Reducers";
 import {UploadReducerState} from "../Data/UploadReducer";
