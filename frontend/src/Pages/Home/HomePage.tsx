@@ -4,7 +4,7 @@ import ExcelFileUploadBox from "./Components/UploadBox/FileUploadBoxContainer";
 import {AdvanceSearchModal} from "./Components/AdvanceSearchModal/AdvanceSearchModal";
 import {DispatchableProps} from "../../Core/Dispatchable";
 import {connect} from "react-redux";
-import {SearchResult} from "./Components/SearchResult";
+import {SearchResult} from "./Components/SearchResult/SearchResult";
 import {ReduxState} from "../../Root/Redux/Reducers";
 import {Patient} from "./Data/Patient";
 import {SearchArea} from "./Components/SearchArea";
@@ -33,7 +33,7 @@ class HomePage extends React.Component<Props> {
             }
             {
                 (!this.props.searching && this.props.searchResult !== undefined) &&
-                <SearchResult items={this.props.searchResult}/>
+                <SearchResult/>
             }
             {
                 (!this.props.searching && this.props.searchError) &&

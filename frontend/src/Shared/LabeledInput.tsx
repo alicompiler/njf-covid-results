@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {HorizontalDivider} from "../../../Shared/HorizontalDivider";
+import {HorizontalDivider} from "./HorizontalDivider";
 
 interface Props {
     label: string;

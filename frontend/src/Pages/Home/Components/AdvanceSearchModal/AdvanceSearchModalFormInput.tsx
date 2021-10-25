@@ -1,4 +1,4 @@
-import {LabeledInput} from "../LabeledInput";
+import {LabeledInput} from "../../../../Shared/LabeledInput";
 import React from "react";
 
 interface Props {
