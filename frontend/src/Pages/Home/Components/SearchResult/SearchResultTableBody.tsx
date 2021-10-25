@@ -40,9 +40,9 @@ export function SearchResultTableBody() {
                     }
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium flex justify-end">
-                    <a href="#" className="text-gray-600 hover:text-indigo-900">Edit</a>
+                    <a href="#" className="text-gray-600 hover:text-indigo-900">تعديل</a>
                     <HorizontalDivider/>
-                    <a href="#" className="text-gray-600 hover:text-red-900">Delete</a>
+                    <a href="#" className="text-gray-600 hover:text-red-900">حذف</a>
                 </td>
             </tr>
         )

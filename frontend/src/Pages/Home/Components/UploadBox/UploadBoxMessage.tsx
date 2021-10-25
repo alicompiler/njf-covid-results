@@ -7,7 +7,7 @@ export function UploadBoxMessage(){
     const file = useSelector((state:ReduxState) => state.Upload.file);
     return <div className={'flex flex-col items-center'}>
         {
-            file && <h1 className={'text-2xl my-4'}>File Selected</h1>
+            file && <h1 className={'text-2xl my-4'}>تم اختيار ملف</h1>
         }
         <p>{t('import_box_message')}</p>
     </div>;

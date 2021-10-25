@@ -6,7 +6,7 @@ import {useDispatch} from "react-redux";
 export function AdvanceSearchModalHeader() {
     const dispatch = useDispatch();
     return <div className={'justify-center items-center relative'}>
-        <h1 className={'text-2xl'}>Advance Search</h1>
+        <h1 className={'text-2xl'}>بحث متقدم</h1>
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <a className={'absolute top-0 right-0'}
            onClick={() => dispatch(SearchActions.closeAdvanceSearchModal())}>

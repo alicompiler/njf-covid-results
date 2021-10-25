@@ -12,23 +12,23 @@ export function AdvanceSearchModalForm() {
 
     return <form autoComplete={'off'} className={'py-4 flex flex-col'}>
         <div className={'flex'}>
-            <AdvanceSearchModalFormInput label={'Name'} type={'search'} value={form.name}
+            <AdvanceSearchModalFormInput label={'الاسم'} type={'search'} value={form.name}
                                          onChange={changeCallback('name')}/>
-            <AdvanceSearchModalFormInput label={'Phone'} type={'phone'} value={form.phone}
+            <AdvanceSearchModalFormInput label={'الهاتف'} type={'phone'} value={form.phone}
                                          onChange={changeCallback('phone')}/>
         </div>
         <div className={'flex'}>
-            <AdvanceSearchModalFormInput label={'From Date'} type={'date'} value={form.fromDate}
+            <AdvanceSearchModalFormInput label={'من تاريخ'} type={'date'} value={form.fromDate}
                                          onChange={changeCallback('fromDate')}/>
-            <AdvanceSearchModalFormInput label={'To Date'} type={'date'} value={form.toDate}
+            <AdvanceSearchModalFormInput label={'الى تاريخ'} type={'date'} value={form.toDate}
                                          onChange={changeCallback('toDate')}/>
         </div>
         <div className={'flex '}>
-            <AdvanceSearchModalFormInput label={'Source'} type={'search'} value={form.source}
+            <AdvanceSearchModalFormInput label={'المصدر'} type={'search'} value={form.source}
                                          onChange={changeCallback('source')}/>
-            <AdvanceSearchModalFormInput label={'Status'} type={'search'} value={form.status}
+            <AdvanceSearchModalFormInput label={'الحالة'} type={'search'} value={form.status}
                                          onChange={changeCallback('status')}/>
-            <AdvanceSearchModalFormInput label={'Result'} type={'search'} value={form.result}
+            <AdvanceSearchModalFormInput label={'النتيجة'} type={'search'} value={form.result}
                                          onChange={changeCallback('result')}/>
         </div>
     </form>
