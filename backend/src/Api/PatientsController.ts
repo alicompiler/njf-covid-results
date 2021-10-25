@@ -16,14 +16,21 @@ export class PatientsController {
             destination: './temp/'
         })
     }))
-    async uploadFile(@UploadedFile() excel: Express.Multer.File , @Body() body) {
-        const patients = this.importService.import(excel , body.date);
+    async uploadFile(@UploadedFile() excel: Express.Multer.File, @Body() body) {
+        const patients = this.importService.import(excel, body.date);
         await this.patientService.import(patients);
         return patients;
     }
 
     @Get()
-    async search(@Query() query){
-        return await this.patientService.simpleSearch(query.query);
+    async search(@Query() query) {
+        console.log(query);
+        if (query.advanceSearch === 'true') {
+            return await this.patientService.advanceSearch(query);
+        } else if (!query.query || query.query.trim() === "") {
+            return await this.patientService.simpleSearch(query.query);
+        } else {
+            return await this.patientService.top(100);
+        }
     }
 }

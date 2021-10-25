@@ -51,7 +51,8 @@ class HomePage extends React.Component<Props> {
                 (!this.props.searching && this.props.searchError) &&
                 <h1 className={'text-red-500'}>Error In Search</h1>
             }
-            <AdvanceSearchModal/>
+            <AdvanceSearchModal onSearch={() => this.props.dispatch(SearchActions.advanceSearch())}
+                                handleClose={() => this.props.dispatch(SearchActions.closeAdvanceSearchModal())}/>
         </div>
     }
 }

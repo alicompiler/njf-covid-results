@@ -45,7 +45,6 @@ export class SearchActions {
     private static getPatients(buildPatientPromise: (patientService: PatientService, store: ReduxState) => Promise<Patient[]>): any {
         return function (dispatch: (action: SearchAction) => void, getStore: () => ReduxState) {
             const patientService = new DefaultPatientService();
-            console.log(patientService , getStore());
             dispatch(SearchActions.searchStarted());
             buildPatientPromise(patientService, getStore())
                 .then(patients => dispatch(SearchActions.searchCompleted(patients)))

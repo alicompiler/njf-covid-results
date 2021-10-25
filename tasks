@@ -14,13 +14,13 @@ TODO :
 	- [X] Store Uploaded Excel File
 	- [X] Date With Import
 	- [X] Simple Search Design
-	- [ ] Simple Search Request
-	- [ ] Simple Search Endpoint
+	- [X] Simple Search Request
+	- [X] Simple Search Endpoint
 	- [ ] Advance Search Modal
 	- [ ] Advance Search Request
 	- [ ] Advance Search Endpoint
-	- [ ] Result Design
-	- [ ] Display Results
+	- [X] Result Design
+	- [X] Display Results
 	* [ ] Delete Confirmation Modal
 	* [ ] Delete Item Request
 	* [ ] Delete Endpoint

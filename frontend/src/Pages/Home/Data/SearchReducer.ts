@@ -9,6 +9,7 @@ export interface AdvanceSearchForm {
     source: string;
     status: string;
     result: string;
+    advanceSearch: true;
 }
 
 export interface SearchReducerState {
@@ -22,6 +23,7 @@ export interface SearchReducerState {
 
 export const searchReducerInitialState: SearchReducerState = {
     advanceSearchForm: {
+        advanceSearch:true,
         name: '',
         phone: '',
         fromDate: '',
