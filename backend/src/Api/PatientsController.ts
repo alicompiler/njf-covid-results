@@ -24,10 +24,9 @@ export class PatientsController {
 
     @Get()
     async search(@Query() query) {
-        console.log(query);
         if (query.advanceSearch === 'true') {
             return await this.patientService.advanceSearch(query);
-        } else if (!query.query || query.query.trim() === "") {
+        } else if (query.query && query.query.trim() !== "") {
             return await this.patientService.simpleSearch(query.query);
         } else {
             return await this.patientService.top(100);
