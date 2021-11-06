@@ -19,12 +19,21 @@ function runBackendServer() {
 }
 
 function runFrontendServer() {
-    const frontendProcess = spawn('serve', ['-s', 'build'], {cwd: process.cwd()});
+    const frontendProcess = spawn('serve.cmd', ['-s', 'build'], {cwd: process.cwd()});
     printData(frontendProcess, "FrontendServer");
     frontendProcess.on('close', function (code) {
         console.log('Frontend Server Closed ' + code);
     });
 }
+
+function openBrowser() {
+    const frontendProcess = spawn('explorer', ["http://localhost:3000"]);
+    printData(frontendProcess, "OpenInBrowser");
+    frontendProcess.on('close', function (code) {
+        console.log('OpenInBrowser, Status = ' + code);
+    });
+}
+
 
 function printData(process, processName) {
     process.stdout.setEncoding('utf8');
@@ -38,7 +47,11 @@ function printData(process, processName) {
 
 console.log("Booting COVID Result App");
 console.log("===================");
-process.chdir('../backend');
+process.chdir('backend');
 runBackendServer();
 process.chdir("../frontend");
 runFrontendServer();
+
+openBrowser();
+
+
