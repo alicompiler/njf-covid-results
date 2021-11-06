@@ -4,13 +4,13 @@ import {PatientEntity} from "./Entities/PatientEntity";
 import path from "path";
 import {PatientModules} from "./Patient/patient.modules";
 
-const setting = require("Settings.json");
+import settings from './Settings.json';
 
 @Module({
     imports: [
         TypeOrmModule.forRoot({
             type: 'sqlite',
-            database: path.resolve(setting.dbPath),
+            database: path.resolve(settings.dbPath),
             entities: [PatientEntity],
             logging : true
         }),
