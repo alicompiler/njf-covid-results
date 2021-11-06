@@ -10,7 +10,7 @@ const spawn = require('child_process').spawn;
 
 
 function installBackendApp() {
-    const backendProcess = spawn('npm.cmd', ['run', 'install']);
+    const backendProcess = spawn('npm.cmd', ['install']);
     printData(backendProcess, "BackendApp");
     backendProcess.on('close', function (code) {
         console.log('Backend App Installment Finished, Status = ' + code);
@@ -18,7 +18,7 @@ function installBackendApp() {
 }
 
 function installFrontendApp() {
-    const frontendProcess = spawn('npm.cmd', ['run', 'install']);
+    const frontendProcess = spawn('npm.cmd', ['install']);
     printData(frontendProcess, "FrontendApp");
     frontendProcess.on('close', function (code) {
         console.log('Frontend App Installment Finished, Status = ' + code);
