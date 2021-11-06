@@ -21,10 +21,12 @@ Tasks :
 	- [X] Advance Search Endpoint
 	- [X] Result Design
 	- [X] Display Results
-	- [ ]
+	- [ ] Run Script
 	- [ ] Limit DB Result BY Configured Number
+	- [ ] Import From Excel
 	- [ ] Cancel Result
 	- [ ] Prepare For Deployment
+	- [ ] Backup Windows Scheduled Task
 	* [ ] Delete Confirmation Modal
 	* [ ] Delete Item Request
 	* [ ] Delete Endpoint
