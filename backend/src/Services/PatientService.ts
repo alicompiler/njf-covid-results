@@ -22,6 +22,7 @@ export class PatientService {
         return this.repository.createQueryBuilder("patients")
             .select("*")
             .where("name LIKE :name OR phone LIKE :phone", {name: `%${query}%`, phone: `%${query}%`})
+            .limit(250)
             .execute();
     }
 
@@ -64,6 +65,7 @@ export class PatientService {
         return this.repository.createQueryBuilder("patients")
             .select("*")
             .where(whereClause, params)
+            .limit(250)
             .execute();
     }
 }
