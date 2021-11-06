@@ -19,7 +19,7 @@ function runBackendServer() {
 }
 
 function runFrontendServer() {
-    const frontendProcess = spawn('npm.cmd', ['run' , 'start'] , {cwd : process.cwd()});
+    const frontendProcess = spawn('serve', ['-s', 'build'], {cwd: process.cwd()});
     printData(frontendProcess, "FrontendServer");
     frontendProcess.on('close', function (code) {
         console.log('Frontend Server Closed ' + code);
