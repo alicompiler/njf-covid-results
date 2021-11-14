@@ -7,5 +7,6 @@
   "result": ["result", "النتيجة"],
   "source": ["source", "المصدر"],
   "note": ["note", "notes", "الملاحظات"],
+  "date": ["date", "التاريخ"],
   "smsStatus": ["sms", "sms status", "الرسالة"]
 }

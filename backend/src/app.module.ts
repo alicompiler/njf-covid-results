@@ -12,7 +12,7 @@ import settings from './Settings.json';
             type: 'sqlite',
             database: path.resolve(settings.dbPath),
             entities: [PatientEntity],
-            logging : true
+            // logging : true
         }),
         PatientModules,
     ],
