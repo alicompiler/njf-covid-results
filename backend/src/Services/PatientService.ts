@@ -10,12 +10,14 @@ export class PatientService {
     constructor(@InjectRepository(PatientEntity) private readonly repository: Repository<PatientEntity>) {
     }
 
-    public import(patients: Patient[]): Promise<any> {
-        return this.repository.createQueryBuilder()
-            .insert()
-            .into(PatientEntity)
-            .values(patients)
-            .execute();
+    public async import(patients: Patient[]): Promise<any> {
+        for (const patient of patients) {
+            await this.repository.createQueryBuilder()
+                .insert()
+                .into(PatientEntity)
+                .values(patient)
+                .execute()
+        }
     }
 
     simpleSearch(query: string): Promise<any> {
