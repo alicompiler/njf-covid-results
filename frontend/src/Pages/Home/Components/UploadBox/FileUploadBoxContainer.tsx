@@ -64,8 +64,16 @@ class FileUploadBoxContainer extends React.Component<Props> {
             alert('select date first');
             return;
         }
+        this.props.dispatch(ImportActions.startUpload())
         await this.importDataService.import(this.props.file, this.props.date,
-            () => this.props.dispatch(ImportActions.clear())
+            () => {
+                this.props.dispatch(ImportActions.finishUpload())
+                this.props.dispatch(ImportActions.clear());
+            },
+            () => {
+                this.props.dispatch(ImportActions.finishUpload())
+                alert('Upload Fail')
+            }
         );
     }
 }
